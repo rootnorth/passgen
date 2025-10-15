@@ -1,42 +1,74 @@
-# passgen
-🔐 PASSGEN – Basit Şifre Yöneticisi ve Üreticisi
-GELİŞTİRİCİLERİMİZ METNİN EN ALTINDADIR MADE WITH ❤
+🔐 PASSGEN
 
-PASSGEN, Python ile yazılmış bir şifre oluşturma ve yönetim aracıdır.
-Kullanıcı dostu terminal arayüzü sayesinde güçlü şifreler üretip yerel olarak güvenli bir şekilde saklamanıza olanak tanır.
+Basit Şifre Yöneticisi ve Üreticisi
+MADE WITH ❤
+👥 Katkıda Bulunanlar
+- [@rootnorth](https://github.com/rootnorth) — Kodlama, şifre üretim mantığı
+- [@haretor](https://github.com/haretor) — Yapı, test ve dökümantasyon
+
+ & @haretor
+
+🧩 Genel Bakış
+
+PASSGEN, Python ile yazılmış, tamamen terminal üzerinden çalışan bir şifre oluşturma ve yönetim aracıdır.
+Yeni sürüm, şifrelerinizi güvenli biçimde saklamak için şifreleme (encryption) desteği ve otomatik requirements.bat başlatma özelliğiyle güçlendirilmiştir.
 
 🚀 Özellikler
 
-✅ Güçlü, rastgele şifre üretimi (secrets modülü ile)
+✅ Güçlü, rastgele şifre üretimi
 
-✅ Harf, rakam ve sembol kombinasyonlarını destekler
+Python’un secrets modülü ile gerçek rastgelelik (kriptografik güvenli).
 
-✅ Üretilen şifreleri JSON dosyasında saklar (passwords.json)
+✅ Farklı karakter setleri desteği
 
-✅ Kaydedilmiş şifreleri görüntüleme ve detaylarına erişim
+Harfler, rakamlar, semboller isteğe göre kombinlenebilir.
 
-✅ Basit, terminal tabanlı menü sistemi
+✅ Şifrelenmiş veri saklama
 
-🧩 Kurulum
+Tüm kayıtlar artık passwords.enc dosyasında şifrelenmiş olarak tutulur.
 
-Bu projeyi klonlayın:
+Şifreleme, kullanıcı tarafından belirlenen bir master parola ile yapılır.
+
+✅ requirements.bat otomatik çalıştırma
+
+Program, başlatıldığında aynı klasörde bulunan requirements.bat dosyasını otomatik olarak çalıştırır.
+
+Bu sayede gerekli bağımlılıklar (örn. cryptography) kolayca yüklenebilir.
+
+✅ JSON tabanlı veri yapısı (şifrelenmeden önce)
+
+Şifreler düzenli bir yapıda saklanır, gerektiğinde çözülebilir.
+
+✅ Terminal tabanlı menü sistemi
+
+Kullanıcı dostu, basit ama güçlü menü arayüzü.
+
+🧱 Kurulum
+
+Projeyi klonlayın:
 
 git clone https://github.com/kullaniciadi/passgen.git
-
 cd passgen
 
 
-Python 3.7+ sürümünüzün kurulu olduğundan emin olun.
-Gerekirse Python’un resmi sitesinden
- yükleyebilirsiniz.
+Python 3.7+ sürümünün kurulu olduğundan emin olun.
 
-Programı çalıştırın:
+1️⃣ Gerekli bağımlılıkları yükleyin
 
+Eğer requirements.bat dosyası varsa, program açıldığında otomatik olarak çalışacaktır.
+Manuel yüklemek isterseniz:
+
+pip install cryptography
+
+2️⃣ Programı çalıştırın
 python passgen.py
 
 💡 Kullanım
 
-Program çalıştığında üç ana seçenek sunar:
+Program açıldığında ilk olarak master parola ister.
+Bu parola, şifreleme/çözme için kullanılır ve unutulmamalıdır.
+
+Ardından ana menü gelir:
 
 PASSGEN BY ROOTNORTH, HARETOR
 
@@ -47,53 +79,61 @@ Menu:
 
 🔸 1) Şifre Oluştur
 
-Site adı / kullanıcı adı girilir.
+Site adı ve kullanıcı adı girilir.
 
 Şifre uzunluğu ve karakter seti seçilir.
 
-Şifre otomatik oluşturulur ve passwords.json dosyasına kaydedilir.
+Şifre üretilir ve şifrelenmiş şekilde diske kaydedilir (passwords.enc).
 
 🔸 2) Kaydedilmiş Şifreleri Göster
 
-Daha önce oluşturulmuş tüm kayıtları listeler.
+Şifrelenmiş dosya çözülür (master parola ile).
 
-Detay görmek için numara girilebilir.
+Tüm kayıtlar listelenir, detay görmek için numara seçilebilir.
 
 🔸 3) Çıkış
 
-Programdan güvenli şekilde çıkış yapılır.
+Program güvenli şekilde kapanır.
 
-🧱 Teknik Detaylar
+Veriler diskte şifreli kalır.
 
-Şifre üretimi secrets modülü ile yapılır (kriptografik olarak güvenli).
+🔐 Teknik Detaylar
 
-Veriler passwords.json adlı dosyada JSON formatında tutulur.
+secrets modülü: Rastgele ve güçlü parola üretimi.
+
+cryptography (Fernet): AES tabanlı dosya şifreleme/çözme.
+
+json: Veri formatı düzeni.
+
+subprocess: Program açılışında requirements.bat çalıştırma.
+
+os, datetime, string: Sistem, zaman ve karakter işlemleri.
 
 Karakter seti seçenekleri:
-
-letters → Sadece harfler
-
-letters_digits → Harf + rakam
-
-all → Harf + rakam + semboller (varsayılan)
-
+Seçim	Açıklama
+letters	Sadece harfler
+letters_digits	Harf + rakam
+all	Harf + rakam + semboller (varsayılan)
 ⚠️ Güvenlik Uyarısı
 
 Bu proje öğrenme ve kişisel kullanım amaçlıdır.
-Gerçek üretim ortamlarında şifreleri düz metin halinde saklamak önerilmez.
-Daha güvenli bir sistem için:
+Gerçek ortamlarda:
 
-Şifreleri şifreleyerek (örn. cryptography kütüphanesi ile) saklayın.
+Master parolanızı kimseyle paylaşmayın.
 
-passwords.json dosyasını versiyon kontrolüne dahil etmeyin.
+passwords.enc dosyasını yedekleyin ama güvenli ortamda saklayın.
 
-👨‍💻 Geliştiriciler
+passwords.json dosyasını asla GitHub’a yüklemeyin.
 
-## 👥 Katkıda Bulunanlar
-Proje Yöneticisi - Kodlama: rootnorth <rootnorth@users.noreply.github.com>
-Fikir - Testing: haretor <haretor@users.noreply.github.com> 
+.gitignore dosyasına ekleyin:
+
+passwords.json
+passwords.enc
 
 📄 Lisans
 
-Bu proje MIT Lisansı
- altında lisanslanmıştır.
+Bu proje MIT Lisansı altında yayınlanmıştır.
+Kod serbestçe kullanılabilir, geliştirilebilir ve dağıtılabilir.
+
+İstersen buna uygun olarak .gitignore ve requirements.bat içeriğini de sana hazırlayayım — requirements.bat dosyasında otomatik olarak pip install cryptography komutu çalışsın.
+Hazırlayayım mı?
