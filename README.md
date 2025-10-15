@@ -49,7 +49,7 @@ Kullanıcı dostu, basit ama güçlü menü arayüzü.
 
 Projeyi klonlayın:
 
-git clone https://github.com/kullaniciadi/passgen.git
+git clone https://github.com/rootnorth/passgen
 cd passgen
 
 
