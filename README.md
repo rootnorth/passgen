@@ -1,5 +1,7 @@
 🔐 PASSGEN
 
+UYARI: .ENC UZANTILI DOSYANIN DEĞİŞTİRİLMESİ VEYA SİLİNMESİ SONUCU GÜVENLİK NEDENİYLE PROGRAM KENDİ KENDİNİN ŞİFRELERİNİ YOK EDECEK
+
 Basit Şifre Yöneticisi ve Üreticisi
 MADE WITH ❤
 👥 Katkıda Bulunanlar
