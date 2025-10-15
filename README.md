@@ -22,6 +22,7 @@ Kullanıcı dostu terminal arayüzü sayesinde güçlü şifreler üretip yerel 
 Bu projeyi klonlayın:
 
 git clone https://github.com/kullaniciadi/passgen.git
+
 cd passgen
 
 
@@ -89,8 +90,8 @@ passwords.json dosyasını versiyon kontrolüne dahil etmeyin.
 👨‍💻 Geliştiriciler
 
 ## 👥 Katkıda Bulunanlar
-- [@rootnorth](https://github.com/rootnorth) — Kodlama, şifre üretim mantığı
-- [@haretor](https://github.com/haretor) — Fikir, Test
+Proje Yöneticisi - Kodlama: rootnorth <rootnorth@users.noreply.github.com>
+Fikir - Testing: haretor <haretor@users.noreply.github.com> 
 
 📄 Lisans
 
