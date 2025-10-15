@@ -46,15 +46,10 @@ Bu sayede gerekli bağımlılıklar (örn. cryptography) kolayca yüklenebilir.
 Kullanıcı dostu, basit ama güçlü menü arayüzü.
 
 🧱 Kurulum
-windows için:
+
 projenin detaylarındaki py ve bat dosyalarını indirin.
 
-linux için:
-Projeyi klonlayın:
-
-git clone https://github.com/rootnorth/passgen
-cd passgen
-
+Kurulum talimatları:
 
 Python 3.7+ sürümünün kurulu olduğundan emin olun.
 
