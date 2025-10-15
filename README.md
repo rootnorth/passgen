@@ -88,9 +88,9 @@ passwords.json dosyasını versiyon kontrolüne dahil etmeyin.
 
 👨‍💻 Geliştiriciler
 
-rootnorth
-
-@Haretor
+## 👥 Katkıda Bulunanlar
+- [@rootnorth](https://github.com/rootnorth) — Kodlama, şifre üretim mantığı
+- [@haretor](https://github.com/haretor) — Fikir, Test
 
 📄 Lisans
 
